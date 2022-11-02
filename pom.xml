@@ -50,6 +50,32 @@
             <artifactId>commons-lang3</artifactId>
             <version>${commons.lang3.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>bootstrap-datepicker</artifactId>
+            <version>1.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>react-datepicker</artifactId>
+            <version>4.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oginotihiro</groupId>
+            <artifactId>datepicker</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bowergithub.roxus</groupId>
+            <artifactId>range-datepicker</artifactId>
+            <version>0.0.31</version>
+        </dependency>
 
     </dependencies>
 </project>

@@ -1,19 +1,32 @@
 package pl.tomaszbuga.tests;
 
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pl.tomaszbuga.framework.BaseTest;
 import pl.tomaszbuga.pom.SeleniumTrainingPage;
 
+import java.time.LocalDate;
+
+
+import static org.testng.AssertJUnit.assertEquals;
+
 public class FirstTest extends BaseTest {
 
     SeleniumTrainingPage seleniumTrainingPage;
+    private WebElement textInput;
+    private WebElement inputPassword;
+    private WebElement inputDate;
+
+
 
     @BeforeMethod
     public void beforeSetup() {
-        seleniumTrainingPage = new SeleniumTrainingPage(getDriver());
+        WebElement textareaInput = null;
+        seleniumTrainingPage = new SeleniumTrainingPage(textInput, textareaInput, inputPassword, inputDate, getDriver());
         seleniumTrainingPage.openPage();
+
     }
 
     @Test()
@@ -70,9 +83,35 @@ public class FirstTest extends BaseTest {
                 .getTextFromTextInput();
     }
 
+    private String enterPasswordAndGetInputValue(String expectedText) {
+        return seleniumTrainingPage
+                .enterTextToPasswordInput(expectedText)
+                .getTextFromPasswordInput();
+    }
+
     private String fillTextareaAndGetInputValue(String expectedText) {
         return seleniumTrainingPage
                 .enterTextToTextareaInput(expectedText)
                 .getTextFromTextareaInput();
     }
+
+    @Test()
+    public void addPassword() {
+//         Assign
+        String expectedText = "Password ";
+        // Act
+        String myPassword = enterPasswordAndGetInputValue(expectedText);
+        // Assert
+        Assert.assertEquals(myPassword, expectedText);
+//        inputPassword.getAttribute("type").equals("password");
+    }
+
+    @Test
+    public void chooseDateFromCalendar() {
+        seleniumTrainingPage.clickDatePicker();
+        seleniumTrainingPage.chooseToday();
+    }
+
+
 }
+

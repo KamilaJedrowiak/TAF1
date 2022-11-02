@@ -1,0 +1,7 @@
+pl\tomaszbuga\tests\FirstTest.class
+pl\tomaszbuga\framework\PageObject.class
+pl\tomaszbuga\pom\SeleniumTrainingPage.class
+pl\tomaszbuga\pom\HomePage.class
+pl\tomaszbuga\framework\BaseTest.class
+pl\tomaszbuga\pom\Pas.class
+pl\tomaszbuga\utils\ByLocatorFinder.class
